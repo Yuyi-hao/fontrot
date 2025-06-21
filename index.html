@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fontrot</title>
+</head>
+<body>
+    <main class="container">
+        <section class="tool-box">
+            <div class="row">
+                <ul class="options">
+                    <label class="tool-title">Shapes</label>
+                    <li class="option">Rectangle</li>
+                    <li class="option">Circle</li>
+                    <li class="option">Triangle</li>
+                    <li class="option"><input type="checkbox" name="fill-style" id="fill-style"><label for="fill-style">Fill</label></li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul class="options">
+                    <label class="tool-title">Options</label>
+                    <li class="option">Brush</li>
+                    <li class="option">Eraser</li>
+                    <li class="option"><input type="range" name="brush-size" id="brush-size" value="1"></li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul class="options">
+                    <label class="tool-title">Color</label>
+                    <input type="color" id="curr-color" name="curr-color" value="#000000">
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                </ul>
+            </div>
+            <div class="row">
+                <button class="clear-canvas" id="clear-canvas">Clear Canvas</button>
+                <button class="save-image" id="save-canvas">Save Image</button>
+            </div>
+
+        </section>
+        <section class="drawing-box">
+            <canvas id="drawing-canvas"></canvas>
+        </section>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
