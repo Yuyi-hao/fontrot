@@ -2,8 +2,28 @@
     const drawingCanvas = document.getElementById('drawing-canvas');
     const linewidthSlider = document.getElementById('brush-size');
     const clearButton = document.getElementById('clear-canvas');
-    const colorInput = document.getElementById('curr-color');
     const saveButton = document.getElementById('save-canvas');
+
+    // colors
+    const colorPickers = document.querySelectorAll('.color-selector');
+    colorPickers.forEach(element => {
+        element.addEventListener('click', (event) => {
+            colorPickers.forEach(p => p.classList.remove('selected'));
+            currColor = element.value;
+            element.classList.add('selected');
+            console.log(element.value)
+        });
+        element.addEventListener('input', (event) => {
+            colorPickers.forEach(p => p.classList.remove('selected'));
+            element.value = event.target.value;
+            currColor = element.value;
+            element.classList.add('selected');
+        });
+        element.addEventListener('dblclick', () => {
+            element.click();
+        });
+    });
+
     drawingCanvas.width = drawingCanvas.offsetWidth;
     drawingCanvas.height = drawingCanvas.offsetHeight;
     const drawingCtx = drawingCanvas.getContext('2d');
@@ -14,10 +34,6 @@
     let x =0;
     let y = 0;
     let brushWidth = 1;
-
-    colorInput.addEventListener('input', (event) => {
-        currColor = event.target.value;
-    })
 
     linewidthSlider.addEventListener('input', (event) => {
         brushWidth = event.target.value;

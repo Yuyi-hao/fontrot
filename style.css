@@ -47,3 +47,34 @@ section{
     width: 100%;
     height: 100%;
 }
+
+.color-pallet{
+    display: flex;
+    gap: 2px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.color-selector{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.color-selector::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+.color-selector::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+.color-selector.selected{
+    border: 2px solid black;
+    padding: 2px;
+}
+
+
